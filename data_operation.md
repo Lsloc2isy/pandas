@@ -1,0 +1,13 @@
+# 数据操作
+.head(N) 取出前N行
+.tail(N) 取出后N行
+分组操作 df.groupby(['column1','column2'])
+.transform('max'/'min') 将列中的元素转换为该列最大或最小的元素，常与分组操作一起使用
+左联表 df1.merge(df2,left_on='column1',right_on='column2',how='left')
+df['column'].rank(method='dense',ascending=False) 按照升序或降序排名,dense表示不跳过没空隙
+df.drop(df.index,inplace=True) 根据索引删除二维表中的行
+透视表 主要用来将横表变成竖表
+id_vars 作为主键的变量
+value_vars 想要保存到竖表里的变量
+var_name value_vars的变量名
+value_name value_vars的值的变量名
