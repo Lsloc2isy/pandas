@@ -1,0 +1,12 @@
+df.groupby(['column1','column2'][操作].reset_index() # groupby返回series类型，通过reset_index()方法还原成dateframe类型
+df.groupby()['column'].sum()分组内加和
+df.groupby()['column'].transformer(min/max)分组内转换最大最小值一般与数据选择操作连用
+df.groupby()['column'].nunique()分组内column的种类数
+df.groupby()['column'].size()分组内column的数目
+agg()聚合函数
+首先agg（）函数的作用对象是group分组后的series
+group.agg(
+'column1' = ('要处理的列','使用的函数'),
+'column2' = ('col','nunique'),
+'column3' = ('col',lambda x: ','.join(x))
+).reset_index()
